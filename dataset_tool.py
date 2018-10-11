@@ -600,6 +600,7 @@ def create_from_images(tfrecord_dir, image_dir, shuffle):
     image_filenames = sorted(glob.glob(os.path.join(image_dir, '*')))
     if len(image_filenames) == 0:
         error('No input images found')
+    print("The total number of images: {}".format(len(image_filenames)))
         
     img = np.asarray(PIL.Image.open(image_filenames[0]))
     resolution = img.shape[0]
